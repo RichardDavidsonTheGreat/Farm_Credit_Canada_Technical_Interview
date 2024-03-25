@@ -34,15 +34,18 @@ def simulate_game(num_simulations, num_dice):
     return results, total_time
 
 def main():
-    num_dice = int(input("Enter the number of dice: "))
-    num_simulations = int(input("Enter the number of simulations: "))
+    #uncomment the blow code to allow the user to select the number of dice and the number of simulations
+    #num_dice = int(input("Enter the number of dice: "))
+    #num_simulations = int(input("Enter the number of simulations: "))
+    num_dice = 5
+    num_simulations = 10000
 
     results, total_time = simulate_game(num_simulations, num_dice)
 
     print(f"Number of simulations was {num_simulations} using {num_dice} dice.")
     for score in range(len(results)):
         count = results[score]
-        print(f"Total {score} occurs {count/num_simulations:.3f} occurred {count} times.")
+        print(f"Total {score} occurs {count/num_simulations:.2f} occurred {count} times.")
     print(f"Total simulation took {total_time:.1f} seconds")
 
 if __name__ == "__main__":
